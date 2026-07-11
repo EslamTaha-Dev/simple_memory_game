@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>memory-game-b</title>
+  </head>
+  <body>
+    <div class="pattern-grid" id="patternGrid"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="content">
+            <div class="progress">
+              <div
+                id="progress"
+                class="progress-bar progress-bar-striped progress-bar-animated"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <section>
+              <div class="container">
+                <div id="cards" class="row"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
