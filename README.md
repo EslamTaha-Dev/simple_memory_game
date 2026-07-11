@@ -1,6 +1,6 @@
 # 🧠 Memory Match Game
 
-A simple, clean **Memory Card matching game** built to practice core TypeScript concepts, DOM manipulation, and event-driven UI logic — no frameworks, just TypeScript + Vite.
+A simple, clean Memory Card matching game built to practice core TypeScript concepts, DOM manipulation, and event-driven UI logic — no JS frameworks or libraries for the game logic itself, just TypeScript + Vite, styled with Bootstrap.
 
 🔗 **Live Demo:** [eslamtaha-dev.github.io/simple_memory_game](https://eslamtaha-dev.github.io/simple_memory_game/)
 
