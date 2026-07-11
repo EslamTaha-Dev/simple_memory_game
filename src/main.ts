@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
+const BASE = import.meta.env.BASE_URL;
 import type { IPrepare } from "./models/prepare.model";
 import type { ICard } from "./models/card.model";
 
@@ -14,11 +14,11 @@ const prepare: IPrepare = {
 };
 prepare.cards = [];
 prepare.progress = 0;
-prepare.fullTrack = new Audio("./src/assets/audio/fulltrack.mp3");
-prepare.flipAudio = new Audio("./src/assets/audio/flip.mp3");
-prepare.goodAudio = new Audio("./src/assets/audio/good.mp3");
-prepare.failAudio = new Audio("./src/assets/audio/fail.mp3");
-prepare.gameOverAudio = new Audio("./src/assets/audio/game-over.mp3");
+prepare.fullTrack = new Audio(`${BASE}audio/fulltrack.mp3`);
+prepare.flipAudio = new Audio(`${BASE}audio/flip.mp3`);
+prepare.goodAudio = new Audio(`${BASE}audio/good.mp3`);
+prepare.failAudio = new Audio(`${BASE}audio/fail.mp3`);
+prepare.gameOverAudio = new Audio(`${BASE}audio/game-over.mp3`);
 prepare.fullTrack.loop = true;
 
 const numberOfCards = 20;
@@ -142,14 +142,14 @@ const stopAudio = (audio?: HTMLAudioElement) => {
 for (let index = 0; index < numberOfCards / 2; index++) {
   prepare.cards.push({
     id: getRandomInt(0, numberOfCards),
-    src: `./assets/images/${index}.png`,
+    src: `${BASE}images/${index}.png`,
     flip: "",
     clickable: true,
     index,
   });
   prepare.cards.push({
     id: getRandomInt(0, numberOfCards),
-    src: `./assets/images/${index}.png`,
+    src: `${BASE}images/${index}.png`,
     flip: "",
     clickable: true,
     index,
@@ -167,14 +167,14 @@ prepare.cards.forEach((item, index) => {
         <div class="front">
           <!-- front content -->
           <div class="card">
-            <img class="card-image" src="./src/assets/back.jpg" alt="Loading ... ">
+            <img class="card-image" src="${BASE}back.jpg" alt="Loading ... ">
             <span class="card-content">${index + 1}</span>
           </div>
         </div>
         <div class="back">
           <!-- back content -->
           <div class="card">
-            <img src="./src/assets/images/${item.index}.png" alt="Image [100%x180]" style="height: 120px; width: 100%; display: block;">
+            <img src="${BASE}images/${item.index}.png" alt="Image [100%x180]" style="height: 120px; width: 100%; display: block;">
           </div>
         </div>
       </div>
@@ -202,8 +202,8 @@ if (grid) {
       const cell = document.createElement("div");
       const isEven = (row + col) % 2 === 0;
       cell.style.backgroundImage = isEven
-        ? "url(./src/assets/brain.jpg)"
-        : "url(./src/assets/lab.jpg)";
+        ? `url(${BASE}brain.jpg)`
+        : `url(${BASE}lab.jpg)`;
       grid.appendChild(cell);
     }
   }
